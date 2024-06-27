@@ -23,5 +23,45 @@
             "signup": "Kayıt Ol",
             "haveAccount": "Zaten hesabınız mı var?"
         }
+    },
+    "adminPanel": {
+        "adminTabs": {
+            "dashboard": "Panel",
+            "events": "Etkinlikler"
+        },
+        "stats": {
+            "title": "İstatistikler",
+            "statsTitles": {
+                "totalEvents": "Etkinlik Sayısı",
+                "availableEvents": "Aktif Etkinlikler",
+                "unavailableEvents": "Pasif Etkinlikler"
+            }
+        },
+        "events": {
+            "category": "Kategori",
+            "title": "Başlık",
+            "description": "Açıklama"
+        }
+    },
+    "map": {
+        "title": "Harita",
+        "information": "Yeni bir etkinlik oluşturmak için, etkinliği oluşturmak istediğiniz yere çift tıklayın."
+    },
+    "filters": {
+        "title": "Filtreler",
+        "categories": {
+            "title": "Kategoriler",
+            "all": "Hepsi"
+        },
+        "status": {
+            "title": "Etkinlik Durumu",
+            "available": "Aktif",
+            "unavailable": "Pasif"
+        },
+        "dateRange": {
+            "title": "Tarih Aralığı",
+            "startDate": "Başlangıç",
+            "endDate": "Son"
+        }
     }
 }

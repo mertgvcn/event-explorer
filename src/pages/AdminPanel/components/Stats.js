@@ -2,6 +2,7 @@ import { Box, Card, Typography, styled } from '@mui/material'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Categories } from '../../../redux/features/event/eventData'
+import { useTranslation } from 'react-i18next'
 
 const StatsWrapper = styled(Box)({
     display: 'flex',
@@ -31,24 +32,25 @@ const StyledCardContent = styled(Box)({
 
 const Stats = () => {
     const { events } = useSelector(state => state.event)
+    const { t } = useTranslation()
 
     return (
         <StatsWrapper>
             <StyledCard>
                 <StyledCardContent>
-                    <Typography variant='subtitle2' fontSize={16}>Total Events</Typography>
+                    <Typography variant='subtitle2' fontSize={16}>{t('adminPanel.stats.statsTitles.totalEvents')}</Typography>
                     <Typography component="span" fontSize={24}>{events.length}</Typography>
                 </StyledCardContent>
             </StyledCard>
             <StyledCard>
                 <StyledCardContent>
-                    <Typography variant='subtitle2' fontSize={16}>Available Events</Typography>
+                    <Typography variant='subtitle2' fontSize={16}>{t('adminPanel.stats.statsTitles.availableEvents')}</Typography>
                     <Typography component="span" fontSize={24}>{events.filter(event => event.isActive == true).length}</Typography>
                 </StyledCardContent>
             </StyledCard>
             <StyledCard>
                 <StyledCardContent>
-                    <Typography variant='subtitle2' fontSize={16}>Unavailable Events</Typography>
+                    <Typography variant='subtitle2' fontSize={16}>{t('adminPanel.stats.statsTitles.unavailableEvents')}</Typography>
                     <Typography component="span" fontSize={24}>{events.filter(event => event.isActive == false).length}</Typography>
                 </StyledCardContent>
             </StyledCard>

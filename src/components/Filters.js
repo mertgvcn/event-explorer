@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Categories } from '../redux/features/event/eventData'
 import { changeCategoryFilter, changeStartDateFilter, changeEndDateFilter, changeStatusFilter } from '../redux/features/event/eventSlice'
 import { DateTimePicker } from '@mui/x-date-pickers'
+import { useTranslation } from 'react-i18next'
 
 const FiltersWrapper = styled(Box)({
     display: 'flex',
@@ -16,6 +17,7 @@ const FiltersWrapper = styled(Box)({
 
 const Filters = () => {
     const dispatch = useDispatch()
+    const { t } = useTranslation()
 
     const [checkedCategories, setCheckedCategories] = useState(Categories)
     const checkedCategoriesRef = useRef(Categories)
@@ -95,8 +97,8 @@ const Filters = () => {
                     alignItems: "center",
                     justifyContent: "space-between"
                 }}>
-                    <Typography variant='subtitle2' fontSize={16}>Categories</Typography>
-                    <FormControlLabel label="All" control={
+                    <Typography variant='subtitle2' fontSize={16}>{t('filters.categories.title')}</Typography>
+                    <FormControlLabel label={t('filters.categories.all')} control={
                         <Checkbox
                             size='xs'
                             value='All'
@@ -127,21 +129,21 @@ const Filters = () => {
 
             {/* Status Filter */}
             <Box marginBottom={2}>
-                <Typography variant='subtitle2' fontSize={16}>Status</Typography>
+                <Typography variant='subtitle2' fontSize={16}>{t('filters.status.title')}</Typography>
                 <RadioGroup
                     row
                     name="event-status"
                     value={selectedStatus}
                     onChange={handleStatusChange}
                 >
-                    <FormControlLabel value={true} control={<Radio />} label="Available" />
-                    <FormControlLabel value={false} control={<Radio />} label="Unavailable" />
+                    <FormControlLabel value={true} control={<Radio />} label={t('filters.status.available')} />
+                    <FormControlLabel value={false} control={<Radio />} label={t('filters.status.unavailable')} />
                 </RadioGroup>
             </Box>
 
             {/* Date Filter */}
             <Box marginBottom={2}>
-                <Typography variant='subtitle2' fontSize={16} mb={2}>Date Range</Typography>
+                <Typography variant='subtitle2' fontSize={16} mb={2}>{t('filters.dateRange.title')}</Typography>
                 <Box sx={{
                     display: "flex",
                     flexDirection: "row",
@@ -152,13 +154,13 @@ const Filters = () => {
                 }}>
                     <DateTimePicker
                         sx={{ width: { xs: '100%', lg: '45%' } }}
-                        name="start" maxDateTime={dateRange.end} label="Start Date"
+                        name="start" maxDateTime={dateRange.end} label={t('filters.dateRange.startDate')}
                         value={dateRange.start} onChange={handleStartDateChange}
                     />
 
                     <DateTimePicker
                         sx={{ width: { xs: '100%', lg: '45%' } }}
-                        name="end" minDateTime={dateRange.start} label="End Date"
+                        name="end" minDateTime={dateRange.start} label={t('filters.dateRange.endDate')}
                         value={dateRange.end} onChange={handleEndDateChange}
                     />
                 </Box>

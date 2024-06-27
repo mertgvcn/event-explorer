@@ -13,6 +13,7 @@ import Map from '../../components/Map.js'
 import Filters from '../../components/Filters.js';
 import Stats from './components/Stats.js';
 import ShowAttendees from './components/ShowAttendees.js';
+import { useTranslation } from 'react-i18next';
 
 export const Wrapper = styled(Box)(({ flex }) => ({
     display: "flex",
@@ -77,6 +78,7 @@ const WrapperFooter = styled(Box)({
 
 const AdminPanel = () => {
     const dispatch = useDispatch()
+    const { t } = useTranslation()
     const { adminTab } = useSelector(state => state.admin)
     const { events } = useSelector(state => state.event)
 
@@ -91,7 +93,7 @@ const AdminPanel = () => {
                         <WrapperTitle>
                             <MapIcon fontSize='small' />
                             <Typography variant='subtitle2'>
-                                Map
+                                {t('map.title')}
                             </Typography>
                         </WrapperTitle>
 
@@ -102,7 +104,7 @@ const AdminPanel = () => {
                         <WrapperFooter>
                             <InfoIcon fontSize='small' />
                             <Typography variant='subtitle1' fontSize={{ xs: "small", md: "medium" }}>
-                                To create a new event on the map, double click on the location of the event
+                                {t('map.information')}
                             </Typography>
                         </WrapperFooter>
                     </Wrapper>
@@ -112,7 +114,7 @@ const AdminPanel = () => {
                             <WrapperTitle>
                                 <FilterListIcon fontSize='small' />
                                 <Typography variant='subtitle2'>
-                                    Filters
+                                    {t('filters.title')}
                                 </Typography>
                             </WrapperTitle>
 
@@ -125,7 +127,7 @@ const AdminPanel = () => {
                             <WrapperTitle>
                                 <QueryStatsIcon fontSize='small' />
                                 <Typography variant='subtitle2'>
-                                    Stats
+                                    {t('adminPanel.stats.title')}
                                 </Typography>
                             </WrapperTitle>
 
@@ -144,9 +146,9 @@ const AdminPanel = () => {
                         <Table>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Category</TableCell>
-                                    <TableCell>Title</TableCell>
-                                    <TableCell>Description</TableCell>
+                                    <TableCell>{t('adminPanel.events.category')}</TableCell>
+                                    <TableCell>{t('adminPanel.events.title')}</TableCell>
+                                    <TableCell>{t('adminPanel.events.description')}</TableCell>
                                     <TableCell></TableCell>
                                     <TableCell></TableCell>
                                 </TableRow>

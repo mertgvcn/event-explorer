@@ -23,5 +23,45 @@
             "signup": "Sign Up",
             "haveAccount": "Do You Already Have An Account?"
         }
+    },
+    "adminPanel": {
+        "adminTabs": {
+            "dashboard": "Dashboard",
+            "events": "Events"
+        },
+        "stats": {
+            "title": "Stats",
+            "statsTitles": {
+                "totalEvents": "Total Events",
+                "availableEvents": "Available Events",
+                "unavailableEvents": "Unavailable Events"
+            }
+        },
+        "events": {
+            "category": "Category",
+            "title": "Title",
+            "description": "Description"
+        }
+    },
+    "map": {
+        "title": "Map",
+        "information": "To create a new event on the map, double click on the location of the event"
+    },
+    "filters": {
+        "title": "Filters",
+        "categories": {
+            "title": "Categories",
+            "all": "All"
+        },
+        "status": {
+            "title": "Status",
+            "available": "Available",
+            "unavailable": "unavailable"
+        },
+        "dateRange": {
+            "title": "Date Range",
+            "startDate": "Start Date",
+            "endDate": "End Date"
+        }
     }
 }
