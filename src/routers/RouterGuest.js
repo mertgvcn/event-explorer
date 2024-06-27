@@ -4,11 +4,13 @@ import { Outlet, Route, Routes } from 'react-router-dom'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import RegisterPage from '../pages/RegisterPage/RegisterPage'
+import Navbar from '../components/Navbar'
 
 const RouterGuest = () => {
     const Layout = () => {
         return (
             <>
+                <Navbar />
                 <Outlet />
             </>
         )

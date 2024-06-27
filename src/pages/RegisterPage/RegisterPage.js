@@ -1,14 +1,19 @@
 import React from 'react'
-//css
-import './RegisterPage.css'
 //components
 import RegisterForm from './components/RegisterForm'
+import { Box } from '@mui/material'
 
 const RegisterPage = () => {
     return (
-        <div className='register-page'>
+        <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "calc(100vh - 60px)",
+            width: "100%"
+        }}>
             <RegisterForm />
-        </div>
+        </Box>
     )
 }
 

@@ -1,0 +1,27 @@
+{
+    "logout": "Çıkış Yap",
+    "loginPage": {
+        "title": "Event Explorer'a Giriş Yap",
+        "inputs": {
+            "email": "Mail",
+            "password": "Şifre"
+        },
+        "buttons": {
+            "login": "Giriş Yap",
+            "signup": "Kayıt Ol"
+        }
+    },
+    "registerPage": {
+        "title": "Event Explorer'a Kayıt Ol",
+        "inputs": {
+            "name": "İsim",
+            "email": "Mail",
+            "password": "Şifre",
+            "confirmPassword": "Şifreyi Onaylayın"
+        },
+        "buttons": {
+            "signup": "Kayıt Ol",
+            "haveAccount": "Zaten hesabınız mı var?"
+        }
+    }
+}

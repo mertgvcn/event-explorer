@@ -1,0 +1,27 @@
+{
+    "logout": "Logout",
+    "loginPage": {
+        "title": "Login to Event Explorer",
+        "inputs": {
+            "email": "Email",
+            "password": "Password"
+        },
+        "buttons": {
+            "login": "Login",
+            "signup": "Sign Up"
+        }
+    },
+    "registerPage": {
+        "title": "Sign Up to Event Explorer",
+        "inputs": {
+            "name": "Name",
+            "email": "Email",
+            "password": "Password",
+            "confirmPassword": "Confirm Password"
+        },
+        "buttons": {
+            "signup": "Sign Up",
+            "haveAccount": "Do You Already Have An Account?"
+        }
+    }
+}

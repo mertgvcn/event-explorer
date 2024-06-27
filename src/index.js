@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/app/redux.js';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import './i18n.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

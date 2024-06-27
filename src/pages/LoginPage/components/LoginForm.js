@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 //style
 import { Button, Stack, TextField, Typography } from '@mui/material'
 
@@ -8,6 +9,7 @@ import { Button, Stack, TextField, Typography } from '@mui/material'
 
 const LoginForm = () => {
     const navigate = useNavigate()
+    const { t } = useTranslation()
     const { users } = useSelector(state => state.user)
 
     const [formData, setFormData] = useState({
@@ -26,8 +28,6 @@ const LoginForm = () => {
     const handleLogin = () => {
         users.map((user) => {
             if (user.email == formData.email && user.password == formData.password) {
-                console.log("Giriş Başarılı")
-                
                 localStorage.setItem("id", user.id)
                 localStorage.setItem("name", user.name)
                 localStorage.setItem("email", user.email)
@@ -44,11 +44,11 @@ const LoginForm = () => {
 
     return (
         <Stack direction='column' spacing={6}>
-            <Typography variant='h4'>Login to Event Explorer</Typography>
+            <Typography variant='h4'>{t('loginPage.title')}</Typography>
 
             <Stack direction='column' spacing={2}>
                 <TextField
-                    label='Email'
+                    label={t('loginPage.inputs.email')}
                     type='email'
                     name='email'
                     size='small'
@@ -56,7 +56,7 @@ const LoginForm = () => {
                     onChange={handleChange}
                 />
                 <TextField
-                    label='Password'
+                    label={t('loginPage.inputs.password')}
                     type='password'
                     name='password'
                     size='small'
@@ -66,8 +66,8 @@ const LoginForm = () => {
             </Stack>
 
             <Stack direction='column' spacing={2}>
-                <Button variant='contained' onClick={handleLogin}>Login</Button>
-                <Button variant='outlined' onClick={handleGoSignup}>Sign up</Button>
+                <Button variant='contained' onClick={handleLogin}>{t('loginPage.buttons.login')}</Button>
+                <Button variant='outlined' onClick={handleGoSignup}>{t('loginPage.buttons.signup')}</Button>
             </Stack>
         </Stack>
     )

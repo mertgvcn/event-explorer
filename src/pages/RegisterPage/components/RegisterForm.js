@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Stack, TextField, Typography } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../../../redux/features/user/userSlice'
+import { useTranslation } from 'react-i18next'
 
 const RegisterForm = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const { t } = useTranslation()
 
     const [formData, setFormData] = useState({
         name: "",
@@ -43,11 +45,11 @@ const RegisterForm = () => {
 
     return (
         <Stack direction='column' spacing={6}>
-            <Typography variant='h4'>Sign up to Event Explorer</Typography>
+            <Typography variant='h4'>{t('registerPage.title')}</Typography>
 
             <Stack direction='column' spacing={2}>
                 <TextField
-                    label='Name'
+                    label={t('registerPage.inputs.name')}
                     type='name'
                     name='name'
                     size='small'
@@ -55,7 +57,7 @@ const RegisterForm = () => {
                     onChange={handleChange}
                 />
                 <TextField
-                    label='Email'
+                    label={t('registerPage.inputs.email')}
                     type='email'
                     name='email'
                     size='small'
@@ -63,7 +65,7 @@ const RegisterForm = () => {
                     onChange={handleChange}
                 />
                 <TextField
-                    label='Password'
+                    label={t('registerPage.inputs.password')}
                     type='password'
                     name='password'
                     size='small'
@@ -71,7 +73,7 @@ const RegisterForm = () => {
                     onChange={handleChange}
                 />
                 <TextField
-                    label='Confirm Password'
+                    label={t('registerPage.inputs.confirmPassword')}
                     type='password'
                     name='confirmPassword'
                     size='small'
@@ -81,8 +83,8 @@ const RegisterForm = () => {
             </Stack>
 
             <Stack direction='column' spacing={2}>
-                <Button variant='contained' onClick={handleSignup} >Sign up</Button>
-                <Button variant='text' onClick={handleGoLogin} >Do you already have an account?</Button>
+                <Button variant='contained' onClick={handleSignup} >{t('registerPage.buttons.signup')}</Button>
+                <Button variant='text' onClick={handleGoLogin} >{t('registerPage.buttons.haveAccount')}</Button>
             </Stack>
         </Stack>
     )

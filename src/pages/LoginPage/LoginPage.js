@@ -1,14 +1,19 @@
 import React from 'react'
-//css
-import './LoginPage.css'
+import { Box } from '@mui/material'
 //components
 import LoginForm from './components/LoginForm'
 
 const LoginPage = () => {
     return (
-        <div className='login-page'>
+        <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "calc(100vh - 60px)",
+            width: "100%"
+        }}>
             <LoginForm />
-        </div>
+        </Box >
     )
 }
 
